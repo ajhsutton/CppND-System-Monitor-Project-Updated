@@ -18,9 +18,13 @@ const std::string kVersionFilename{"/version"};
 const std::string kOSPath{"/etc/os-release"};
 const std::string kPasswordPath{"/etc/passwd"};
 
+// Helper
+std::string FindValueForKeyInFile(std::string, std::string);
+std::vector<std::string> FindValuesForKeyInFile(std::string, std::string);
+
 // System
 float MemoryUtilization();
-long UpTime();
+long int UpTime();
 std::vector<int> Pids();
 int TotalProcesses();
 int RunningProcesses();
@@ -41,9 +45,9 @@ enum CPUStates {
   kGuestNice_
 };
 std::vector<std::string> CpuUtilization();
-long Jiffies();
-long ActiveJiffies();
-long ActiveJiffies(int pid);
+//long Jiffies();
+long ActiveSeconds();
+long ActiveSeconds(int pid);
 long IdleJiffies();
 
 // Processes
